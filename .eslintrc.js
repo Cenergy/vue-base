@@ -1,33 +1,37 @@
 module.exports = {
-    root: true,
     env: {
         node: true,
+        browser: true,
+        es6: true,
+        commonjs: true,
     },
-    extends: ['plugin:vue/essential', '@vue/airbnb', '@vue/prettier'],
+    extends: ['airbnb-base', 'prettier', 'prettier/vue'],
+    globals: {
+        Atomics: 'readonly',
+        SharedArrayBuffer: 'readonly',
+    },
+    parser: 'vue-eslint-parser',
     parserOptions: {
         parser: 'babel-eslint',
+        ecmaVersion: 2018,
+        sourceType: 'module',
     },
+    plugins: ['vue', 'import'],
     rules: {
-        'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-        indent: ['error', 4],
-        'no-underscore-dangle': ['error', { allowAfterThis: true }],
-        'no-param-reassign': ['error', { props: false }],
-        'no-unused-vars': 'warn',
-        'prefer-destructuring': [
+        'linebreak-style': [0, 'error', 'windows'],
+        'no-console': 'off',
+        'max-len': [
             'error',
             {
-                array: false,
-                object: false,
-            },
-            {
-                enforceForRenamedProperties: false,
+                comments: 300,
+                ignoreStrings: true,
+                ignoreUrls: true,
+                code: 120,
             },
         ],
-        'no-restricted-syntax': 'off',
-        'no-prototype-builtins': 'off',
-        'no-bitwise': ['error', { int32Hint: true }],
-        radix: ['error', 'as-needed'],
-        'no-unused-expressions': ['error', { allowShortCircuit: true, allowTernary: true }],
+        'no-underscore-dangle': ['error', { allowAfterThis: true }],
+        'import/extensions': 'off',
+        'no-param-reassign': ['error', { props: false }],
+        'no-unused-vars': 'warn',
     },
 };

@@ -5,10 +5,21 @@
 </template>
 
 <script>
+import { TweenMax, TimelineMax } from "gsap";
+import * as d3 from 'd3';
+import * as topojson from "topojson-client";
+import * as planetary from 'planetary.js';
+import * as ScrollMagic from 'scrollmagic';
+import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+
 export default {
     name: 'HelloWorld',
     props: {
         msg: String,
+    },
+    mounted() {
+        ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+        console.log(`rdapp - mounted - scrollmagic`, new ScrollMagic.Controller());
     },
 };
 </script>
