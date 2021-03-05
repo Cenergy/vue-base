@@ -32,6 +32,7 @@ module.exports = {
         'no-underscore-dangle': ['error', { allowAfterThis: true }],
         'import/extensions': 'off',
         'no-param-reassign': ['error', { props: false }],
-        'no-unused-vars': 'warn',
+        'no-unused-vars': 'off',
+        'import/no-unresolved':'off'
     },
 };
