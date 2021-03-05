@@ -4,8 +4,7 @@
             <header>
                 <h1 id="heading">
                     Hello,
-                    <br />I’m Dandy Weng,
-                    <br />an autodidact.
+                    <br />I’m Dandy Weng, <br />an autodidact.
                 </h1>
                 <h2 id="subheading">
                     And I love traveling, photography,
@@ -463,23 +462,21 @@
                 <p>
                     Camarts, a
                     <span class="a">photography</span> portfolio I’ve been
-                    <span class="b">designing</span> and developing, features various apps that are taking full advantage of my
-                    <span class="c">programming</span> skills.
+                    <span class="b">designing</span> and developing, features various apps that are
+                    taking full advantage of my <span class="c">programming</span> skills.
                 </p>
                 <p>
                     Most photos were taken while I was
-                    <span class="d">traveling</span> all over the world, which is made possible because I'm an
-                    <span class="e">autodidact</span>.
+                    <span class="d">traveling</span> all over the world, which is made possible
+                    because I'm an <span class="e">autodidact</span>.
                 </p>
                 <p>
                     It’s the culmination of the
                     <span class="f">dot-connecting</span> effort.
                 </p>
-                <a
-                    href="../camarts.app/index673a.html?bN"
-                    target="_blank"
-                    class="button"
-                >Take a Look</a>
+                <a href="../camarts.app/index673a.html?bN" target="_blank" class="button"
+                    >Take a Look</a
+                >
             </div>
             <div class="showcase">
                 <div class="container">
@@ -506,7 +503,7 @@
             <div class="content">
                 <img
                     id="eyeye-logo"
-                    style="height: 40px; margin-bottom: 2em;"
+                    style="height: 40px; margin-bottom: 2em"
                     src="../assets/images/eyeye-logo.png"
                 />
                 <p>Eyeye is an eyesight trainer powered by AR eye-tracking technology.</p>
@@ -538,7 +535,10 @@
         <section id="vary" class="products">
             <div class="content">
                 <img id="vary-logo" src="../assets/images/vary-logo.jpg" />
-                <p>Vary is a innovative Modular Journal Editior with built-in privacy-focused social network.</p>
+                <p>
+                    Vary is a innovative Modular Journal Editior with built-in privacy-focused
+                    social network.
+                </p>
                 <a href="../itunes.apple.com/app/vary/id1190496148" target="_blank" rel="external">
                     <img
                         src="../assets/images/en/download-on-app-store.png"
@@ -579,19 +579,22 @@
                             target="_blank"
                             rel="external"
                             href="../twitter.com/dandyweng"
-                        >Twitter @dandyweng</a>
+                            >Twitter @dandyweng</a
+                        >
                         <a
                             class="tag"
                             target="_blank"
                             rel="external"
                             href="../instagram.com/dandyweng"
-                        >Instagram @dandyweng</a>
+                            >Instagram @dandyweng</a
+                        >
                         <a
                             class="tag"
                             target="_blank"
                             rel="external"
                             href="../github.com/dandyweng.html"
-                        >Github @dandyweng</a>
+                            >Github @dandyweng</a
+                        >
                     </div>
                 </div>
                 <div id="talk" class="item">
@@ -614,12 +617,15 @@
                                 href="../www.youtube.com/watch9a19?v=F4BWNANyNhs"
                                 target="_blank"
                                 rel="external"
-                            >YouTube</a> |
+                                >YouTube</a
+                            >
+                            |
                             <a
                                 href="../v.youku.com/v_show/id_XNjUyOTM0ODI0.html"
                                 target="_blank"
                                 rel="external"
-                            >Youku</a>
+                                >Youku</a
+                            >
                         </p>
                     </div>
                 </div>
@@ -635,14 +641,20 @@
                                     oninput="guestbook.contentDidChange(this)"
                                 ></textarea>
                                 <p>
-                                    If you don't want your message to be displayed publicly, send me an email at
-                                    <a href="mailto:dandyweng@dandyweng.com">dandyweng@dandyweng.com</a> instead.
+                                    If you don't want your message to be displayed publicly, send me
+                                    an email at
+                                    <a href="mailto:dandyweng@dandyweng.com"
+                                        >dandyweng@dandyweng.com</a
+                                    >
+                                    instead.
                                 </p>
                                 <button
                                     id="next-step-button"
                                     class="inactive"
                                     onclick="guestbook.next()"
-                                >Done</button>
+                                >
+                                    Done
+                                </button>
                             </div>
                             <div id="step-2" class="inner-container">
                                 <label for="message-name">Name</label>
@@ -669,7 +681,9 @@
                             </div>
                             <div id="step-3" class="inner-container">
                                 <h3>Your message has been saved.</h3>
-                                <p>All messages are held for moderation before displayed publicly.</p>
+                                <p>
+                                    All messages are held for moderation before displayed publicly.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -680,13 +694,14 @@
 </template>
 
 <script>
-
 import { TweenMax, TimelineMax } from 'gsap';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import * as planetary from 'planetary.js';
 import * as ScrollMagic from 'scrollmagic';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
+import Globe from '../services/globe';
+import Scene from '../services/scene';
 
 console.log('Go: ScrollMagic', planetary.planet());
 
@@ -697,13 +712,18 @@ export default {
     },
     mounted() {
         ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
-        console.log(`rdapp - mounted - scrollmagic`, new ScrollMagic.Controller());
+        const globe = new Globe();
+        window.globe = globe;
+        globe.init();
+
+        const scene = new Scene();
+        window.scene = scene;
+        scene.init();
     },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped >
-@import url("~assets/style.css");
-
+@import url('~assets/style.css');
 </style>

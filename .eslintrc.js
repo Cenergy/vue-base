@@ -33,6 +33,9 @@ module.exports = {
         'import/extensions': 'off',
         'no-param-reassign': ['error', { props: false }],
         'no-unused-vars': 'off',
+        'max-len': 'off',
+        'lines-between-class-members': 'off',
+        'class-methods-use-this': 'off',
         'import/no-unresolved':'off'
     },
 };
